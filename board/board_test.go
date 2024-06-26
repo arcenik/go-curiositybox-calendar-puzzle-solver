@@ -122,8 +122,8 @@ func TestGetDate(t *testing.T) {
 	assert.Nil(t, err, "LoadSolution should not return an error")
 	month, day, err := b.GetDate()
 	assert.Nil(t, err)
-	assert.Equal(t, "Feb", month)
-	assert.Equal(t, "10", day)
+	assert.Equal(t, 2, month)
+	assert.Equal(t, 10, day)
 
 	// Solution{
 	// 0:  0, 0, 0, true
@@ -164,8 +164,8 @@ func TestGetDate(t *testing.T) {
 	assert.Nil(t, err, "LoadSolution should not return an error")
 	month, day, err = b.GetDate()
 	assert.EqualError(t, err, "the solution is not valid")
-	assert.Equal(t, "", month)
-	assert.Equal(t, "", day)
+	assert.Equal(t, -1, month)
+	assert.Equal(t, -1, day)
 
 	b.Completed = false
 	_, _, err = b.GetDate()
