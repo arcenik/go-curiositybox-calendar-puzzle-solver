@@ -1,0 +1,24 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "board",
+    srcs = [
+        "board.go",
+        "solution.go",
+    ],
+    importpath = "github.com/arcenik/go-curiositybox-calendar-puzzle-solver/board",
+    visibility = ["//visibility:public"],
+    deps = ["@com_github_fatih_color//:go_default_library"],
+)
+
+go_test(
+    name = "board_test",
+    srcs = [
+        "board_test.go",
+        "solution_test.go",
+    ],
+    deps = [
+        ":board",
+        "@com_github_stretchr_testify//assert:go_default_library",
+    ],
+)

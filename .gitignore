@@ -1,3 +1,6 @@
 out.txt
 *.db
 cbox-calendar-puzzle
+cp.out
+
+/bazel-*
