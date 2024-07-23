@@ -16,7 +16,7 @@ go_library(
     deps = [
         "//board",
         "//dbsqlite3",
-        "@com_github_alecthomas_kong//:go_default_library",
+        "@com_github_alecthomas_kong//:kong",
     ],
 )
 
