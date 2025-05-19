@@ -26,9 +26,8 @@ func (db *DB) GetOneSolution(month, day int) (s board.Solution, err error) {
 		query   string = `
 		SELECT json
 		FROM solutions
-		WHERE id >= (abs(random()) % (SELECT max(id) FROM solutions))
-		AND month=?
-		AND day=?
+		WHERE month=? AND day=?
+		ORDER BY random()
 		LIMIT 1;`
 	)
 

@@ -1,6 +1,8 @@
 
 output = cbox-calendar-puzzle
 
+.PHONY: build clean test cover
+
 build:
 	go build -o $(output)
 
